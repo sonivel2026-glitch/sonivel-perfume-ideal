@@ -1,0 +1,448 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SONIVEL · Descubrí tu Aroma Ideal · Prueba móvil</title><style>:root{font-family:system-ui,Arial;background:#241329;color:#fff}*{box-sizing:border-box}body{margin:0;background:linear-gradient(160deg,#301638,#170f20);min-height:100vh}.wrap{max-width:650px;margin:28px auto;padding:18px}.panel{background:#3c2145;border:1px solid #ad865e;border-radius:24px;padding:25px;box-shadow:0 10px 32px #100c1666}.brand{color:#edc67d;text-align:center;font-size:13px;letter-spacing:2px;font-weight:700}h1{text-align:center;font-size:clamp(27px,6vw,39px);margin:18px 0 8px}p{line-height:1.55;color:#f4dff0}.subtitle{text-align:center}button,.option{display:block;width:100%;padding:16px;border-radius:13px;border:1px solid #a57c9e;margin:11px 0;color:white;background:#633b65;text-align:left;font:inherit;cursor:pointer}button.primary{background:#e12b9b;border:0;text-align:center;font-weight:800}button.secondary{background:#5b3b63;text-align:center}input{width:100%;padding:14px;border:1px solid #bb8aa8;border-radius:12px;font-size:16px;margin:9px 0 15px}.hidden{display:none}.gold{color:#f4c86b}.small{font-size:13px}.progress{height:10px;background:#684265;border-radius:20px;overflow:hidden}.progress span{display:block;height:100%;background:#f4c86b}.tag{color:#f4c86b;font-size:12px;letter-spacing:1px;font-weight:bold}.result{background:#28182e;border-radius:16px;padding:17px;margin:14px 0}a{color:#fff}.foot{text-align:center;color:#efc678;font-size:12px;margin:22px 0}label{display:block;margin-top:8px} .perfume-card{background:#28182e;border:1px solid #78566c;border-radius:15px;padding:12px;min-width:0}.perfume-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.perfume-card img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:9px;background:#49314e}.perfume-card h4{font-size:14px;margin:8px 0 4px;overflow-wrap:anywhere}.perfume-card p{font-size:12px;margin:4px 0}.muted{color:#d9bdd1}.filters{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.filters button{margin:0;text-align:center}.selected{border-color:#f4c86b;background:#89517d}.admin{margin-top:20px;padding:14px;border:1px dashed #a57c9e;border-radius:15px}textarea,select{width:100%;padding:12px;border-radius:10px;font:inherit;margin:8px 0}textarea{min-height:115px}.preview{font-size:12px;color:#e9c7d9}.warn{background:#4e3445;border-radius:12px;padding:13px}.pill{display:inline-block;padding:5px 10px;background:#5b3b63;border-radius:18px;font-size:12px}@media(max-width:430px){.perfume-grid{grid-template-columns:1fr}.perfume-card{display:grid;grid-template-columns:90px 1fr;column-gap:12px}.perfume-card img{grid-row:span 4}.perfume-card h4{margin:0}} .status{padding:12px;border-radius:12px;background:#4e3445;margin:12px 0;font-size:13px}.status.ok{background:#285548}.admin-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}.admin-row button{margin:5px 0}.admin-box{background:#28182e;border-radius:14px;padding:14px;margin-top:12px}.admin-box label{font-size:13px}.admin-box input,.admin-box select,.admin-box textarea{color:#211426;background:white}.admin-box textarea{min-height:70px}.count{color:#f4c86b}.admin-link{display:none;font-size:12px;opacity:.75;text-align:center;margin-top:18px}.admin-link button{font-size:12px;background:transparent;border:0;text-align:center;padding:6px;margin:0}.admin-only{display:none}body.admin-logged .admin-only{display:block}
+/* SONIVEL V6.11 — tarjetas cálidas y explicación basada en familias verificadas. */
+.wrap:has(#finish:not(.hidden)){max-width:1120px}
+#finish .perfume-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}
+#finish .perfume-card{display:flex;flex-direction:column;gap:7px;padding:17px;border-radius:18px;background:linear-gradient(160deg,#38223e,#29182f);box-shadow:0 6px 20px #100c1633}
+#finish .perfume-card img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:13px;margin-bottom:5px}
+#finish .perfume-card h4{font-size:19px;line-height:1.3;margin:4px 0 1px;overflow-wrap:break-word}
+#finish .perfume-card p{font-size:15px;line-height:1.55;margin:3px 0;overflow-wrap:break-word}
+#finish .perfume-card p.gold{font-size:14px;font-weight:650}
+#finish .perfume-card p.perfume-summary{font-size:14px;color:#f4c86b}
+#finish .perfume-card .warm-lead{font-size:16px;font-style:italic;color:#fff0f7;line-height:1.65}
+#finish .perfume-card .warm-detail{font-size:14px;line-height:1.6;color:#f4dff0}
+#finish .perfume-card .warm-detail strong{color:#f4c86b}
+#finish .perfume-card .personal-why{font-size:14px;line-height:1.6;color:#f4dff0;border-top:1px solid #78566c;padding-top:12px;margin-top:auto}
+#finish .perfume-card .personal-why strong{color:#f4c86b}
+#finish .closing-motto{text-align:center;color:#f4c86b;font-size:19px;font-weight:650;margin:22px 0 12px}#finish .perfume-card p.muted{font-size:14px;color:#ead4e3;border-top:1px solid #78566c;padding-top:10px;margin-top:auto}
+@media(max-width:850px){
+ .wrap:has(#finish:not(.hidden)){max-width:750px}
+ #finish .perfume-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+}
+@media(max-width:600px){
+ .wrap:has(#finish:not(.hidden)){max-width:650px;margin:10px auto;padding:10px}
+ #finish .perfume-grid{grid-template-columns:1fr;gap:15px}
+ #finish .perfume-card{display:flex;flex-direction:column;padding:16px}
+ #finish .perfume-card img{grid-row:auto;aspect-ratio:1/1;max-height:370px;object-fit:cover}
+ #finish .perfume-card h4{font-size:20px}
+ #finish .perfume-card p{font-size:16px}
+}
+</style></head><body><main class="wrap"><div class="panel"><div class="brand">✦ SONIVEL · FRAGANCIAS & BIENESTAR ✦</div><p class="small" style="text-align:center;color:#f4c86b">SONIVEL · PERFUME IDEAL</p><h1>🌸 Descubrí tu Aroma Ideal</h1><p class="subtitle">Un viaje por tus gustos para encontrar fragancias que te representen.</p><section id="home"><button class="primary" onclick="start()">✨ Quiero descubrir mi aroma</button><button class="secondary" onclick="showSeller()">💗 Soy asesora · Crear mi enlace</button><p class="small" id="advisorLabel"></p></section><section id="seller" class="hidden"><h2>Tu enlace personalizado</h2><p>Ingresá tu nombre y número comercial. Tus clientes podrán escribirte directamente al finalizar.</p><label>Nombre de asesora</label><input id="sellerName" placeholder="Ej.: María"><label>WhatsApp con código de país (solo números)</label><input id="sellerPhone" inputmode="tel" placeholder="Ej.: 549388XXXXXXX"><button class="primary" onclick="makeLink()">Generar enlace</button><div id="linkBox" class="hidden"><label>Copiá y compartí este enlace:</label><input id="generatedLink" readonly><button class="secondary" onclick="copyLink()">📋 Copiar enlace</button><p class="small">El teléfono comercial queda visible en el enlace. Compartí tu enlace con tus clientes.</p></div><button class="secondary" onclick="goHome()">Volver</button></section><section id="category" class="hidden"><div class="tag">ANTES DE EMPEZAR</div><h2>✨ ¿Qué tipo de fragancias querés descubrir?</h2><p>Elegí lo que más te guste. Podés explorar todas sin etiquetas.</p><div class="filters"><button onclick="setCategory('femenina')">🌷 Femeninas</button><button onclick="setCategory('masculina')">🌿 Masculinas</button><button onclick="setCategory('unisex')">✨ Unisex</button><button onclick="setCategory('todas')">💗 Todas</button></div><button class="secondary" onclick="goHome()">Volver</button></section><section id="quiz" class="hidden"><div id="count" class="gold"></div><div class="progress"><span id="bar"></span></div><h2 id="question"></h2><div id="options"></div><button class="secondary" onclick="goHome()">Salir</button></section><section id="finish" class="hidden"><div class="tag">TU PERFIL OLFATIVO</div><h2 id="profile"></h2><p id="profileText"></p><div class="result"><b>💡 TIP SONIVEL</b><p id="tip"></p></div><h3>🌷 Tus recomendaciones</h3><div id="recommendations"></div><p class="small">Las recomendaciones son orientativas. Se respetan las familias que descartaste, pero un perfume puede contener notas individuales de otros tipos. Las ocasiones sugeridas reflejan tus preferencias, no una característica verificada del producto. Consultá con tu asesora la disponibilidad y el precio vigente.</p><button class="primary" id="waButton" onclick="contact()">💬 Consultar con mi asesora</button><p class="small" id="noAdvisor"></p><button class="secondary" onclick="shareProfile()">💗 Compartir mi perfil olfativo</button><button class="secondary" onclick="saveResult()">🖼️ Guardar tarjeta de mi perfil</button><button class="secondary" onclick="start()">Volver a realizar el test</button></section><div class="foot">SONIVEL · Tu esencia, tu estilo</div></main><script src="config.js"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script><script>
+// Configuración pública de Supabase. Completar config.js después de crear el proyecto.
+const CONFIG=window.SONIVEL_CONFIG||{};
+let sb=null, publishedCatalog=[],catalogLoadState="pendiente",catalogLoadError="";
+const ready=()=>!!(CONFIG.supabaseUrl&&CONFIG.supabaseAnonKey&&window.supabase);
+function getClient(){if(!ready())return null;if(!sb)sb=window.supabase.createClient(CONFIG.supabaseUrl,CONFIG.supabaseAnonKey);return sb}
+async function loadPublished(){const client=getClient();if(!client){catalogLoadState='sin configuración';return}catalogLoadState='cargando';try{const {data,error}=await client.from('perfumes').select('*').eq('publicado',true).order('id',{ascending:true});if(error)throw error;publishedCatalog=(data||[]).map(fromRow);catalogLoadState='cargado'}catch(err){catalogLoadState='error';catalogLoadError=err.message;console.warn('Catálogo público no disponible:',err.message)}}
+function fromRow(r){return {id:r.id,name:r.nombre_allbeauty||'',inspired:r.inspirado_en||'',family:r.familia_olfativa||'floral',description:r.notas_olfativas||'',photo:r.imagen_url||'',category:r.categoria||'unisex',intensity:r.intensidad||'media',familiesDB:Array.isArray(r.familias_olfativas)?r.familias_olfativas.map(f=>String(f).trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')).filter(f=>['floral','frutal','dulce','fresco','amaderado','oriental','ambar','especiada','chipre','gourmand','aromatica','fougere','acuatica'].includes(f)):[],published:!!r.publicado}}
+// V6.7: opciones breves para clientas; 13 familias técnicas permanecen internas.
+const questions=[
+ ['¿Qué características querés evitar? (Podés elegir varias)', [['🌸 Muy floral','floral'],['🍓 Muy frutal','frutal'],['🍦 Muy dulce','dulce'],['🍋 Muy fresco','fresco'],['🪵 Muy amaderado','amaderado'],['✨ Muy oriental','oriental'],['💪 Perfumes intensos','intensa'],['💗 Ninguno, ¡me gusta probar de todo!','ninguno']],true],
+ ['¿Qué aromas te atraen más?', [['🌸 Florales','floral'],['🍓 Frutales','frutal'],['🍦 Dulces','dulce'],['🍋 Frescos y cítricos','fresco'],['🪵 Amaderados','amaderado'],['✨ Orientales','oriental']]],
+ ['¿Qué nota te gustaría encontrar?', [['🌹 Rosa o jazmín','rosa'],['🍓 Frutos rojos','frutos_rojos'],['🍦 Vainilla','vainilla'],['🍋 Cítricos','citricos'],['🌊 Notas acuáticas','acuatico'],['🪵 Maderas','maderas'],['🌶️ Especias','especias'],['✨ Ámbar','ambar']]],
+ ['¿Qué nivel de dulzor preferís?', [['Poco dulce / más seco','bajo'],['Equilibrado','medio'],['Muy dulce','alto']]],
+ ['¿Qué intensidad preferís?', [['Suave','suave'],['Intermedia','media'],['Intensa','intensa']]],
+ ['¿Cuándo lo usarías principalmente?', [['Todos los días o trabajo','dia'],['Salidas y encuentros','versatil'],['Noches y eventos','noche']]],
+ ['¿Qué sensación buscás?', [['Romántica y delicada','romantico'],['Alegre y luminosa','luminoso'],['Reconfortante y cálida','calido'],['Limpia y energética','energetico'],['Elegante y sofisticada','sofisticado'],['Sensual y misteriosa','sensual']]],
+ ['¿Qué estilo te representa?', [['Romántico','romantico'],['Moderno y alegre','luminoso'],['Natural y fresco','energetico'],['Clásico y elegante','sofisticado'],['Atrevido y sensual','sensual']]]
+];
+const profiles={
+ floral:['Floral Romántico','Te gustan los aromas florales delicados y expresivos.','Explorá florales frescos para el día y florales más cálidos para la noche.'],
+ frutal:['Frutal Luminoso','Te atraen los aromas jugosos, alegres y llenos de vitalidad.','Probá fragancias frutales frescas y comparalas con frutales más dulces.'],
+ dulce:['Dulce Envolvente','Disfrutás las notas cálidas, gourmand y reconfortantes.','Probá fragancias con vainilla y compará opciones de distinta intensidad.'],
+ fresco:['Fresco Natural','Preferís la sensación de frescura, ligereza y vitalidad.','Explorá familias cítricas, verdes y acuáticas.'],
+ amaderado:['Amaderado Elegante','Te atraen los aromas profundos y sofisticados con presencia de maderas.','Explorá notas de cedro y sándalo en distintas intensidades.'],
+ ambar:['Ámbar Cálido','Te atraen los acordes cálidos, envolventes y resinosos.','Explorá fragancias ambaradas de distinta intensidad.'],
+ especiada:['Especiado Vibrante','Te gustan los aromas con especias y carácter.','Explorá acordes de pimienta, cardamomo y canela.'],
+ chipre:['Chipre Elegante','Te atraen las composiciones contrastadas y sofisticadas.','Explorá fragancias chipre con matices florales.'],
+ aromatica:['Aromático Natural','Te gustan las notas herbales y aromáticas.','Explorá fragancias aromáticas frescas o especiadas.'],
+ fougere:['Fougère Clásico','Te atraen los acordes aromáticos de estilo fougère.','Explorá fragancias con lavanda, hierbas y matices amaderados.'],
+ acuatica:['Acuático Fresco','Te atraen las notas marinas y acuáticas.','Explorá fragancias acuáticas ligeras o ambaradas.'],
+ gourmand:['Gourmand Delicioso','Te atraen los acordes que recuerdan a postres y alimentos dulces.','Explorá vainilla, caramelo y cacao.'],
+ oriental:['Oriental Especiado','Te atraen los aromas cálidos, ambarados y especiados.','Explorá acordes de ámbar, especias y resinas; compará su intensidad sobre tu piel.']
+};
+let answers=[],step=0,ranked=[],winner='floral',category='todas',recommended=[];const $=id=>document.getElementById(id);function show(id){['home','seller','category','quiz','finish'].forEach(x=>$(x).classList.toggle('hidden',x!==id))}function advisor(){const q=new URLSearchParams(location.search);return {name:q.get('asesora')||'',phone:(q.get('wa')||'').replace(/\D/g,'')}}function goHome(){show('home');$('advisorLabel').textContent=advisor().name?'Tu asesora: '+advisor().name:''}function showSeller(){show('seller')}function makeLink(){let n=$('sellerName').value.trim(),p=$('sellerPhone').value.replace(/\D/g,'');if(!n||p.length<10||p.length>15){alert('Completá un nombre y un WhatsApp válido con código de país.');return}let url=new URL(location.href);url.search='';url.searchParams.set('asesora',n);url.searchParams.set('wa',p);$('generatedLink').value=url.href;$('linkBox').classList.remove('hidden');if(location.protocol==='file:'){alert('Este enlace local solo funciona en esta computadora. Para probar en celular, usá la dirección HTTPS del sitio de prueba independiente.')} }async function copyLink(){try{await navigator.clipboard.writeText($('generatedLink').value);alert('Enlace copiado')}catch{ $('generatedLink').select();alert('Seleccioná el texto y copialo manualmente')}}async function start(){answers=[];step=0;await loadPublished();show('category')}function setCategory(v){category=v;show('quiz');render()}function render(){
+ $('count').textContent=`Pregunta ${step+1} de ${questions.length}`;
+ $('bar').style.width=(step/questions.length*100)+'%';
+ $('question').textContent=questions[step][0];
+ const root=$('options');root.replaceChildren();
+ if(questions[step][2]){
+   const selected=new Set();
+   const buttons=[];
+   const refresh=()=>buttons.forEach(({btn,label,value})=>{
+     const checked=selected.has(value);
+     btn.classList.toggle('selected',checked);
+     btn.textContent=(checked?'☑ ':'☐ ')+label;
+   });
+   questions[step][1].forEach(([label,value])=>{
+     const btn=document.createElement('button');btn.className='option';btn.textContent='☐ '+label;
+     btn.onclick=()=>{
+       if(value==='ninguno'){
+         if(selected.has('ninguno'))selected.clear();
+         else{selected.clear();selected.add('ninguno')}
+       }else{
+         selected.delete('ninguno');
+         if(selected.has(value))selected.delete(value);else selected.add(value);
+       }
+       refresh();
+     };
+     buttons.push({btn,label,value});root.appendChild(btn);
+   });
+   const next=document.createElement('button');next.className='primary';
+   next.textContent='Continuar';
+   next.onclick=()=>{answers.push([...selected].filter(x=>x!=='ninguno'));step++;render()};root.appendChild(next);
+ }else{
+   questions[step][1].forEach(([label,value])=>{
+     const btn=document.createElement('button');btn.className='option';btn.textContent=label;
+     btn.onclick=()=>{answers.push(value);step++;step===questions.length?finish():render()};
+     root.appendChild(btn);
+   });
+ }
+}
+// V6.3.7: catálogo real publicado, exclusivamente lectura. Sin perfumes simulados.
+function catalog(){return publishedCatalog}
+
+// SONIVEL V6.2.2: coincidencia obligatoria con familia preferida; no escribe en Supabase.
+// Se valoran las seis preferencias, la intensidad, la familia evitada y
+// la variedad de familias entre las tres recomendaciones.
+// Clasificación de familias combinadas: lectura de Supabase, sin escritura.
+// Los campos secundarios se completarán en la siguiente etapa, tras migración segura.
+const NOTE_FAMILY={rosa:'floral',frutos_rojos:'frutal',vainilla:'dulce',citricos:'fresco',acuatico:'acuatica',maderas:'amaderado',especias:'especiada',ambar:'ambar'};
+const STYLE_FAMILY={romantico:'floral',luminoso:'frutal',calido:'dulce',energetico:'fresco',sofisticado:'amaderado',sensual:'oriental'};
+const SWEET_FAMILY={alto:['dulce','frutal'],bajo:['fresco','amaderado'],medio:[]};
+// Afinidades aproximadas (no equivalencias oficiales): facilitan el test sencillo.
+const RELATED_FAMILIES={
+ floral:['chipre'],frutal:[],dulce:['gourmand'],fresco:['acuatica','aromatica','fougere'],
+ amaderado:['fougere'],oriental:['ambar','especiada']
+};
+function preferredMatch(families,desired){
+ if(families.includes(desired))return 'directa';
+ return (RELATED_FAMILIES[desired]||[]).some(f=>families.includes(f))?'afinidad':'ninguna';
+}
+
+function quizPreferences(){
+ const score={floral:0,frutal:0,dulce:0,fresco:0,amaderado:0,oriental:0,ambar:0,especiada:0,chipre:0,gourmand:0,aromatica:0,fougere:0,acuatica:0};
+ const add=(f,n)=>{if(Object.prototype.hasOwnProperty.call(score,f))score[f]+=n};
+ add(answers[1],7);
+ for(const f of RELATED_FAMILIES[answers[1]]||[])add(f,3);
+ add(NOTE_FAMILY[answers[2]],4);
+ add(STYLE_FAMILY[answers[6]],3);
+ add(STYLE_FAMILY[answers[7]],2);
+ for(const f of SWEET_FAMILY[answers[3]]||[])add(f,2);
+ return {score,primary:answers[1],avoid:new Set(answers[0]||[]),intensity:answers[4],
+   note:answers[2],sweet:answers[3],occasion:answers[5]};
+}
+// Tabla maestra local de trabajo: clasificación tomada del catálogo AllBeauty
+// revisado con la usuaria. NO modifica ninguna fila de Supabase.
+// Las 13 familias se leen desde Supabase; la tabla local se usa solo como respaldo.
+const MASTER_OLFATIVO={
+ 'LIBRE BERRY':{families:['floral','frutal'],official:'Floral-Frutal'},
+ 'T ADORO':{families:['floral','frutal'],official:'Floral-Frutal'},
+ 'LA VIDA ES LINDA ELIXIR':{families:['floral','frutal'],official:'Floral-Frutal'},
+ 'LOVE GIRL GOLD':{families:['oriental','floral'],official:'Oriental-Floral'},
+ '212 ROSA':{families:['floral','frutal'],official:'Floral-Frutal'},
+ 'AQUA DI GIO PROFONDO':{families:['aromatica','fougere'],official:'Aromática-Fougère'},
+ 'SALVAJE ELIXIR':{families:['frutal','especiada'],attributes:['especiado'],official:'Frutal-Especiado'},
+ 'OLIMPICA':{families:['oriental'],official:'Oriental'},
+ '212 VIP BLACK':{families:['oriental'],official:'Oriental'},
+ 'INVICTO PARFUM':{families:['aromatica','acuatica'],official:'Aromático-Acuático'},
+ 'ER PURA':{families:['oriental','frutal'],official:'Oriental-Frutal'},
+ 'NOCHE DE GALA':{families:['ambar','amaderado'],official:'Ámbar-Amaderado'},
+ 'LTFA MARRON':{families:['oriental','especiada'],attributes:['especiado'],official:'Oriental-Especiado'},
+ 'LTFA NEGRO':{families:['oriental','aromatica'],official:'Oriental-Aromático'},
+ 'LTFA FUCSIA':{families:['floral','frutal'],official:'Floral-Frutal'},
+ 'LTFA ROSA':{families:['oriental','frutal'],official:'Oriental-Frutal'},
+ 'LTFA NARANJA':{families:['floral','frutal'],official:'Floral-Frutal'},
+ '212 HOMBRE SEXY':{families:['oriental','especiada'],attributes:['especiado'],official:'Oriental-Especiado'},
+ '212 HOMBRE':{families:['amaderado','floral'],official:'Amaderado-Floral'},
+ '212 VIP':{families:['amaderado','ambar'],official:'Amaderado-Ámbar'},
+ 'THE BOMB':{families:['ambar','floral'],official:'Ámbar-Floral'},
+ 'ESCANDALO PARIS':{families:['floral','chipre'],attributes:['chipre'],official:'Chipre-Floral'},
+ 'ESCANDALO':{families:['floral','chipre'],attributes:['chipre'],official:'Floral-Chipre'},
+ 'INVICTO VICTORIA':{families:['ambar','oriental'],official:'Ámbar-Oriental'},
+ 'INVICTO INTENSE':{families:['amaderado','oriental'],official:'Amaderado-Oriental'},
+ 'INVICTO':{families:['ambar','acuatica'],official:'Ámbar-Acuático'},
+ 'INVICTO VICTORIA ELIXIR':{families:['ambar','amaderado'],official:'Ámbar-Amaderado'},
+ 'LTFA MAHIR HOMME':{families:['oriental','especiada'],attributes:['especiado'],official:'Oriental-Especiado'},
+ 'LTFA MAHIR FEMME':{families:['oriental','floral'],official:'Oriental-Floral'},
+ 'LOVE GIRL':{families:['ambar','floral'],official:'Ámbar-Floral'},
+ 'LOVE GIRL RED':{families:['oriental','floral'],official:'Oriental-Floral'}
+};
+function normalizedName(name){return String(name||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[’'´`]/g,' ').trim().toUpperCase().replace(/\s+/g,' ')}
+function familyTags(x){if(Array.isArray(x.familiesDB)&&x.familiesDB.length)return x.familiesDB;const entry=MASTER_OLFATIVO[normalizedName(x.name)];return entry?entry.families:[x.family]}
+function primaryFamily(x){return familyTags(x)[0]||x.family}
+
+// V6.3.7: separar familia explícita de equivalencia por afinidad.
+// La intensidad sigue siendo condición para el nivel ideal; exclusiones
+// conservan TODAS las familias declaradas en la tabla de trabajo.
+function matchingType(x,desired){
+ // Familia explícita = directa; familia relacionada = afinidad, nunca directa.
+ return preferredMatch(familyTags(x),desired);
+}
+let recommendationDetails=[];
+function rankPerfumes(p){
+ const levels={suave:0,media:1,intensa:2};
+ const candidates=catalog().filter(x=>category==='todas'||x.category===category);
+ const compatible=candidates.filter(x=>{
+  const fam=familyTags(x);
+  if(fam.some(f=>p.avoid.has(f)))return false;
+  if(p.avoid.has('intensa')&&x.intensity==='intensa')return false;
+  if(p.intensity==='suave'&&x.intensity==='intensa')return false;
+  // Una alternativa debe coincidir con la familia principal, una afinidad
+  // declarada o la familia de la nota elegida; no completar por puntuación sola.
+  const noteFamily=NOTE_FAMILY[p.note];
+  const primaryMatch=preferredMatch(fam,p.primary)!=='ninguna';
+  const noteMatch=Boolean(noteFamily&&fam.includes(noteFamily));
+  if(!primaryMatch&&!noteMatch)return false;
+  return true;
+ });
+ const scored=compatible.map(x=>{
+  const fam=familyTags(x),match=matchingType(x,p.primary);
+  const intensityGap=Math.abs((levels[x.intensity]??1)-(levels[p.intensity]??1));
+  let score=0;
+  // Preferencia principal + nota elegida + personalidad; no priorizar un nivel
+  // sobre el conjunto de respuestas.
+  for(const f of fam)score+=(p.score[f]||0)*3;
+  if(match==='directa')score+=18;
+  else if(match==='afinidad')score+=5;
+  else score-=18;
+  score-=[0,15,35][intensityGap];
+  for(const avoided of p.avoid){
+   if((RELATED_FAMILIES[avoided]||[]).some(f=>fam.includes(f)))score-=22;
+  }
+  if(x.sweetness&&x.sweetness===p.sweet)score+=7;
+  if(Array.isArray(x.occasions)&&x.occasions.includes(p.occasion))score+=7;
+  return {x,match,score,level:match==='directa'?1:match==='afinidad'?2:3};
+ });
+ scored.sort((a,b)=>b.score-a.score||a.level-b.level||String(a.x.name).localeCompare(String(b.x.name),'es'));
+ // Si hay menos de tres opciones seguras, explicarlo sin forzar descartes.
+ recommendationDetails=scored.slice(0,3);
+ return recommendationDetails.map(y=>y.x);
+}
+const FAMILY_LABELS={floral:'floral',frutal:'frutal',dulce:'dulce',fresco:'fresca',amaderado:'amaderada',oriental:'oriental',ambar:'ámbar',especiada:'especiada',chipre:'chipre',gourmand:'gourmand',aromatica:'aromática',fougere:'fougère',acuatica:'acuática'};
+const OCCASION_LABELS={dia:'para el día a día',versatil:'para tus salidas y encuentros',noche:'para tus noches y eventos'};
+function readableFamilies(x){return familyTags(x).map(f=>FAMILY_LABELS[f]||f).join(' · ')}
+function shortVerifiedDescription(x){
+ const intensity={suave:'delicada',media:'equilibrada',intensa:'intensa'}[x.intensity];
+ return `${familyTags(x).length===1?'Familia olfativa':'Familias olfativas'}: ${readableFamilies(x)}${intensity?' | '+intensity.charAt(0).toUpperCase()+intensity.slice(1):''}`;
+}
+// Textos de inspiración editorial: hablan de estilos y ocasiones sugeridas,
+// sin afirmar notas individuales ni propiedades que el catálogo no verifica.
+const FAMILY_STORIES={
+ floral:['románticas y modernas, que disfrutan expresar su feminidad con elegancia y personalidad','una presencia delicada y expresiva'],
+ frutal:['alegres y espontáneas, que disfrutan compartir su energía','un estilo luminoso y lleno de vitalidad'],
+ dulce:['cálidas y soñadoras, que disfrutan los pequeños placeres','una sensación acogedora y envolvente'],
+ fresco:['naturales y activas, que valoran la sencillez y la frescura','una sensación ligera y renovadora'],
+ amaderado:['elegantes y decididas, que prefieren un estilo con carácter','una presencia sofisticada y serena'],
+ oriental:['seguras y expresivas, que disfrutan mostrar su personalidad','una propuesta cálida y con personalidad'],
+ ambar:['sofisticadas y sensibles, que buscan un toque envolvente','un carácter cálido y elegante'],
+ especiada:['audaces y auténticas, que disfrutan salir de lo habitual','una expresión vibrante y llena de carácter'],
+ chipre:['clásicas y refinadas, que valoran los detalles especiales','un estilo elegante y distintivo'],
+ gourmand:['dulces y creativas, que disfrutan de los pequeños placeres','una propuesta acogedora y original'],
+ aromatica:['naturales y seguras, que prefieren una elegancia sin esfuerzo','una expresión fresca y equilibrada'],
+ fougere:['clásicas y seguras, que disfrutan un estilo atemporal','un carácter definido y elegante'],
+ acuatica:['libres y activas, que disfrutan los momentos al aire libre','una sensación ligera y espontánea']
+};
+const OCCASION_MOMENTS={
+ dia:'jornadas de trabajo, paseos cotidianos y momentos en los que querés sentirte vos misma',
+ versatil:'salidas con amigas, encuentros especiales y planes espontáneos',
+ noche:'cenas románticas, encuentros especiales y eventos nocturnos'
+};
+const OCCASION_IDEALS={
+ dia:'mujeres que quieren sentirse cómodas, auténticas y seguras en su rutina',
+ versatil:'mujeres que disfrutan sentirse especiales, seguras y atractivas en sus encuentros',
+ noche:'mujeres que buscan sentirse especiales, seguras y atractivas'
+};
+// Cada tarjeta combina su familia principal/secundaria, el perfil y una variación
+// estable por perfume. Son sugerencias editoriales, no notas verificadas.
+const PAIR_TONES={
+ chipre:['un toque refinado y distintivo','una elegancia clásica con personalidad'],
+ oriental:['un carácter expresivo y sofisticado','una presencia cálida y elegante'],
+ ambar:['un estilo envolvente y distinguido','una expresión elegante y acogedora'],
+ frutal:['un espíritu alegre y luminoso','una energía espontánea y femenina'],
+ amaderado:['una elegancia serena y decidida','un estilo con carácter y equilibrio'],
+ especiada:['un toque audaz y original','una personalidad vibrante'],
+ acuatica:['un aire ligero y libre','una expresión natural y espontánea'],
+ aromatica:['una elegancia natural','un estilo equilibrado y auténtico'],
+ fougere:['un aire clásico y definido','un estilo atemporal'],
+ floral:['un encanto romántico y expresivo','una feminidad delicada'],
+ gourmand:['un toque creativo y acogedor','un estilo dulce y original'],
+ dulce:['un encanto cálido y soñador','una personalidad tierna y expresiva'],
+ fresco:['una sensación ligera y natural','un aire espontáneo']
+};
+const IDEAL_VARIANTS={
+ noche:[
+  'mujeres que disfrutan sentirse elegantes y seguras en una ocasión especial',
+  'mujeres que buscan expresar su personalidad y dejar una impresión especial',
+  'mujeres que quieren resaltar su estilo con confianza y feminidad'
+ ],
+ versatil:[
+  'mujeres que disfrutan compartir momentos y mostrar su estilo personal',
+  'mujeres que buscan una fragancia que acompañe su lado espontáneo',
+  'mujeres que valoran sentirse auténticas y seguras en cada encuentro'
+ ],
+ dia:[
+  'mujeres que valoran la comodidad y la autenticidad en su rutina',
+  'mujeres que quieren expresar su estilo en los pequeños momentos',
+  'mujeres que disfrutan sentirse seguras y naturales cada día'
+ ]
+};
+const MOMENT_VARIANTS={
+ noche:[
+  'una cena especial, una celebración elegante o una salida nocturna',
+  'una cena íntima, un festejo especial o una velada para disfrutar',
+  'eventos nocturnos, reuniones especiales y momentos para destacar'
+ ],
+ versatil:[
+  'una salida con amigas, una reunión especial o un plan espontáneo',
+  'encuentros, paseos y ocasiones que merecen un detalle personal',
+  'una tarde compartida, una salida o una celebración informal'
+ ],
+ dia:[
+  'jornadas de trabajo, paseos y actividades cotidianas',
+  'una mañana activa, una reunión de día o un paseo tranquilo',
+  'tu rutina, encuentros durante el día y pequeños momentos especiales'
+ ]
+};
+function stableVariant(name){
+ let n=0;for(const c of String(name||''))n=(n*31+c.charCodeAt(0))>>>0;
+ return n;
+}
+const PRODUCT_EDITORIAL = {"LIBRE BERRY":["Un estilo floral luminoso, pensado para expresar alegría y encanto.","quienes disfrutan de una imagen alegre y femenina"],"T ADORO":["Una propuesta floral elegante para acompañar tu estilo con delicadeza.","quienes valoran una presencia clásica y distinguida"],"LA VIDA ES LINDA ELIXIR":["Una propuesta floral expresiva para quienes disfrutan celebrar su personalidad.","quienes quieren destacar con un estilo romántico y alegre"],"LOVE GIRL GOLD":["Una propuesta de carácter oriental y floral que invita a lucir un estilo sofisticado.","quienes buscan elegancia con personalidad"],"212 ROSA":["Una expresión floral y frutal para un estilo espontáneo y actual.","quienes combinan romanticismo y energía"],"AQUA DI GIO PROFONDO":["Una propuesta aromática de estilo definido y natural.","quienes valoran una presencia sobria y auténtica"],"SALVAJE ELIXIR":["Un estilo expresivo y audaz, pensado para quienes disfrutan marcar su personalidad.","quienes prefieren una imagen decidida"],"OLIMPICA":["Una propuesta oriental para expresar confianza y elegancia.","quienes buscan un estilo sofisticado"],"212 VIP BLACK":["Un carácter oriental con una imagen moderna y segura.","quienes disfrutan de una presencia distinguida"],"INVICTO PARFUM":["Una propuesta aromática y acuática para un estilo dinámico.","quienes valoran la energía y la autenticidad"],"ER PURA":["Un encuentro entre carácter oriental y expresión frutal, con una personalidad propia.","quienes disfrutan de un estilo expresivo"],"NOCHE DE GALA":["Una propuesta ambarada y amaderada que invita a destacar con elegancia.","quienes buscan una presencia sofisticada"],"LTFA MARRON":["Un estilo oriental y especiado de carácter decidido.","quienes disfrutan de una imagen firme y original"],"LTFA NEGRO":["Una combinación oriental y aromática para expresar personalidad.","quienes buscan un estilo moderno y definido"],"LTFA FUCSIA":["Un estilo floral y frutal lleno de encanto y espontaneidad.","quienes disfrutan expresar su alegría"],"LTFA ROSA":["Una propuesta oriental y frutal para una presencia expresiva.","quienes valoran un estilo femenino y singular"],"LTFA NARANJA":["Una propuesta floral y frutal con espíritu alegre.","quienes quieren mostrar su lado espontáneo"],"212 HOMBRE SEXY":["Una propuesta oriental y especiada para un estilo con carácter.","quienes buscan una presencia segura y atractiva"],"212 HOMBRE":["Una combinación amaderada y floral de estilo equilibrado.","quienes prefieren una elegancia discreta"],"212 VIP":["Una propuesta amaderada y ambarada para destacar con personalidad.","quienes valoran una imagen sofisticada"],"THE BOMB":["Una propuesta ambarada y floral para un estilo femenino con carácter.","quienes disfrutan sentirse especiales"],"ESCANDALO PARIS":["Una propuesta floral y chipre para expresar elegancia con personalidad.","quienes buscan un estilo sofisticado y expresivo"],"ESCANDALO":["Un estilo floral y chipre con una presencia distintiva.","quienes disfrutan destacar con elegancia"],"INVICTO VICTORIA":["Una propuesta ambarada y oriental que invita a expresar seguridad.","quienes valoran una imagen audaz y distinguida"],"INVICTO INTENSE":["Un estilo amaderado y oriental de personalidad firme.","quienes buscan una presencia decidida"],"INVICTO":["Una propuesta ambarada y acuática para un estilo libre y actual.","quienes disfrutan de una imagen dinámica"],"INVICTO VICTORIA ELIXIR":["Una propuesta ambarada y amaderada para una presencia elegante.","quienes buscan un estilo definido y sofisticado"],"LTFA MAHIR HOMME":["Una propuesta oriental y especiada para expresar carácter.","quienes valoran una imagen segura y original"],"LTFA MAHIR FEMME":["Una propuesta oriental y floral para un estilo delicado y sofisticado.","quienes disfrutan de una elegancia femenina"],"LOVE GIRL":["Una propuesta ambarada y floral para una presencia cálida y elegante.","quienes buscan un estilo romántico con carácter"],"LOVE GIRL RED":["Una fragancia para mujeres románticas y modernas, que disfrutan expresar su feminidad con elegancia y personalidad.","mujeres que buscan sentirse especiales, seguras y atractivas"]};
+function storyFor(x,p){
+ const key=OCCASION_MOMENTS[p.occasion]?p.occasion:'versatil';
+ const name=normalizedName(x.name);
+ const text=PRODUCT_EDITORIAL[name];
+ const fam=familyTags(x);
+ const fallback='Una propuesta de estilo '+(FAMILY_LABELS[fam[0]]||'personal')+' para expresar tu personalidad.';
+ const lead=text?text[0]:fallback;
+ const ideal=text?text[1]:'personas que buscan una fragancia acorde con su estilo';
+ const personalMoments={
+  'NOCHE DE GALA':'una cena elegante, una celebración importante o una velada inolvidable',
+  'OLIMPICA':'una salida especial, un festejo con amigas o una noche en la que quieras sentirte segura',
+  'LOVE GIRL GOLD':'un evento distinguido, una cena íntima o una ocasión para lucir tu estilo',
+  'LOVE GIRL':'una cita romántica, un encuentro especial o una noche con personalidad',
+  'THE BOMB':'una cena especial, una celebración elegante o una salida nocturna en la que quieras destacar',
+  'ESCANDALO':'una reunión con estilo, una salida nocturna o un evento donde quieras dejar huella'
+ };
+ const v=stableVariant(name);
+ const moments=personalMoments[name]||MOMENT_VARIANTS[key][(v+fam.length+(fam.includes('ambar')?1:0))%3];
+ return {lead,ideal,moments,name:String(x.name||'Esta fragancia').trim()};
+}
+function personalizedReason(x,p,match){
+ const families=familyTags(x);
+ const familyAdjectives={floral:'florales',frutal:'frutales',dulce:'dulces',fresco:'frescos',amaderado:'amaderados',oriental:'orientales',ambar:'ambarados',especiada:'especiados',chipre:'chipre',gourmand:'gourmand',aromatica:'aromáticos',fougere:'fougère',acuatica:'acuáticos'};
+ const preferred=familyAdjectives[p.primary]||p.primary;
+ const secondary=families.find(f=>f!==p.primary);
+ const noteFamily=NOTE_FAMILY[p.note];
+ let reason;
+ if(families.includes(p.primary)){
+   reason=`Porque te atraen los aromas ${preferred} y ${x.name} pertenece a esa familia`;
+   if(secondary)reason+=`. Su combinación con la familia ${FAMILY_LABELS[secondary]||secondary} le aporta otra faceta a esta propuesta`;
+ }else if(noteFamily&&families.includes(noteFamily)){
+   reason=`Porque también elegiste notas relacionadas con la familia ${FAMILY_LABELS[noteFamily]||noteFamily}, a la que pertenece ${x.name}. Es una alternativa a tu familia principal`;
+ }else{
+   reason=`Como alternativa, podés explorar ${x.name}, de la familia ${readableFamilies(x)}. No pertenece a tu familia principal`;
+ }
+ if(x.intensity===p.intensity)reason+=`. Su intensidad acompaña el estilo que buscás`;
+ else reason+=`. Su intensidad es diferente de la que elegiste; te recomendamos probarla antes de decidir`;
+ return reason+'.';
+}
+
+function sonivelTip(p, profile){
+ const f=p.primary;
+ const avoid=p.avoid;
+ const freshOK=!avoid.has('fresco');
+ const suggestions={
+  floral:freshOK?'Explorá florales frescos para el día y florales cálidos para la noche.':'Explorá florales delicados para el día y florales cálidos y envolventes para tus noches especiales.',
+  frutal:'Probá fragancias frutales suaves para tus planes de día y opciones más expresivas para tus encuentros especiales.',
+  amaderado:'Explorá aromas amaderados equilibrados para el día y opciones de mayor presencia para una salida especial.',
+  oriental:'Probá fragancias orientales de carácter suave para tus encuentros cotidianos y otras más envolventes para la noche.',
+  ambar:'Descubrí fragancias ambaradas equilibradas para tus reuniones y opciones más intensas para momentos especiales.',
+  dulce:'Explorá aromas dulces delicados para el día y versiones más envolventes para una celebración.',
+  fresco:'Probá fragancias frescas y ligeras para tus actividades diarias y otras con más presencia para tus salidas.',
+  especiada:'Explorá fragancias especiadas equilibradas para tus planes cotidianos y opciones intensas para la noche.',
+  chipre:'Probá aromas chipre sutiles para el día y propuestas más definidas para encuentros especiales.',
+  gourmand:'Descubrí fragancias gourmand delicadas para el día y opciones más envolventes para una ocasión especial.',
+  aromatica:'Explorá fragancias aromáticas ligeras para tu rutina y opciones más definidas para una salida.',
+  fougere:'Probá fragancias fougère equilibradas para el día y propuestas más intensas para tus eventos.',
+  acuatica:'Explorá fragancias acuáticas ligeras para el día y otras con mayor presencia para tus encuentros.'
+ };
+ return suggestions[f]||profile[2];
+}
+function finish(){
+ const p=quizPreferences();ranked=Object.keys(p.score).sort((a,b)=>p.score[b]-p.score[a]);winner=p.primary;
+ const profile=profiles[winner];$('profile').textContent=profile[0];$('profileText').textContent=profile[1];$('tip').textContent=sonivelTip(p,profile);
+ recommended=rankPerfumes(p);const el=$('recommendations');el.replaceChildren();
+ if(recommended.length){
+
+  const grid=document.createElement('div');grid.className='perfume-grid';
+  recommendationDetails.forEach(({x,level})=>{const card=document.createElement('article');card.className='perfume-card';
+   if(x.photo){const img=document.createElement('img');img.src=x.photo;img.alt='Perfume AllBeauty '+x.name;img.loading='lazy';card.appendChild(img)}
+   const h=document.createElement('h4');h.textContent=x.name;card.appendChild(h);
+   if(x.inspired){const t=document.createElement('p');t.className='gold';t.textContent='Inspirado en: '+x.inspired;card.appendChild(t)}
+   const desc=document.createElement('p');desc.className='perfume-summary';desc.textContent=shortVerifiedDescription(x);card.appendChild(desc);
+   const story=storyFor(x,p);
+   const lead=document.createElement('p');lead.className='warm-lead';lead.textContent='✨ '+story.lead;card.appendChild(lead);
+   const ideal=document.createElement('p');ideal.className='warm-detail';
+   const idealTitle=document.createElement('strong');idealTitle.textContent='💃 Ideal para: ';
+   ideal.append(idealTitle,document.createTextNode(story.ideal+'.'));card.appendChild(ideal);
+   
+   const why=document.createElement('p');why.className='personal-why';
+   const reasonTitle=document.createElement('strong');reasonTitle.textContent='💗 ¿Por qué lo elegimos para vos? ';
+   why.append(reasonTitle,document.createTextNode(personalizedReason(x,p,matchingType(x,p.primary))));
+   card.appendChild(why);grid.appendChild(card)
+  });el.appendChild(grid);
+  const motto=document.createElement('p');motto.className='closing-motto';motto.textContent='✨ Tu esencia es única. Tu perfume también puede serlo.';el.appendChild(motto);
+  if(recommended.length<3){const msg=document.createElement('p');msg.className='warn';msg.textContent=`Encontramos ${recommended.length} ${recommended.length===1?'fragancia que podría acompañar tu estilo':'fragancias que podrían acompañar tu estilo'}. Preferimos respetar tus gustos antes que completar la selección con perfumes que no van con vos.`;el.appendChild(msg)}
+ }else{const msg=document.createElement('p');msg.className='warn';msg.textContent=catalogLoadState!=='cargado'?'No pudimos comprobar el catálogo en este momento. Revisá la conexión e intentá nuevamente.':'💗 Tu aroma ideal merece una búsqueda especial. No encontramos opciones del catálogo que respeten tus descartes y la categoría elegida. Consultá con tu asesora SONIVEL para explorar alternativas.';el.appendChild(msg)}
+ $('noAdvisor').textContent=advisor().phone?'Tu consulta llegará a '+advisor().name+'.':'Para habilitar WhatsApp, volvé al inicio, elegí «Soy asesora · Crear mi enlace» y abrí ese enlace para usarlo.';
+ $('waButton').disabled=!advisor().phone;$('bar').style.width='100%';show('finish');
+}
+function resultText(){return `Mi perfil SONIVEL es ${profiles[winner][0]}. Preferencia: ${category}. ${recommended.length?'Mis fragancias sugeridas: '+recommended.map(x=>x.name+(x.inspired?' (inspirado en '+x.inspired+')':'')).join(', ')+'.':'Quiero que me recomienden perfumes AllBeauty para mi perfil.'}`}
+async function shareProfile(){
+ const msg='🌸 SONIVEL · Descubrí tu Aroma Ideal\n'+resultText();
+ if(navigator.share){try{await navigator.share({title:'Mi perfil olfativo SONIVEL',text:msg});return}catch(e){if(e.name==='AbortError')return}}
+ try{await navigator.clipboard.writeText(msg);alert('Perfil copiado. Podés compartirlo por WhatsApp o donde prefieras.')}catch{prompt('Copiá tu perfil:',msg)}
+}
+async function saveResult(){
+ // Tarjeta PNG generada localmente; no envía datos ni escribe en Supabase.
+ try{
+  const canvas=document.createElement('canvas');canvas.width=1080;canvas.height=1350;
+  const ctx=canvas.getContext('2d');if(!ctx)throw new Error('Canvas no disponible');
+  const grad=ctx.createLinearGradient(0,0,1080,1350);grad.addColorStop(0,'#42234b');grad.addColorStop(1,'#211428');
+  ctx.fillStyle=grad;ctx.fillRect(0,0,1080,1350);
+  ctx.strokeStyle='#edc67d';ctx.lineWidth=5;ctx.strokeRect(52,52,976,1246);
+  ctx.textAlign='center';ctx.fillStyle='#f4c86b';ctx.font='bold 28px Arial, sans-serif';
+  ctx.fillText('SONIVEL · FRAGANCIAS & BIENESTAR',540,145);
+  ctx.fillStyle='#ffffff';ctx.font='bold 56px Arial, sans-serif';ctx.fillText('MI PERFIL OLFATIVO',540,250);
+  ctx.fillStyle='#f5b9d8';ctx.font='bold 57px Arial, sans-serif';
+  function lines(text,maxWidth,font){ctx.font=font;const words=String(text).split(/\s+/);const out=[];let line='';for(const word of words){const next=line?line+' '+word:word;if(ctx.measureText(next).width>maxWidth&&line){out.push(line);line=word}else line=next}if(line)out.push(line);return out}
+  const profileLines=lines(profiles[winner][0],850,'bold 57px Arial, sans-serif');
+  let y=360;for(const line of profileLines){ctx.fillText(line,540,y);y+=72}
+  ctx.fillStyle='#f3dfef';ctx.font='30px Arial, sans-serif';
+  for(const line of lines(profiles[winner][1],840,'30px Arial, sans-serif').slice(0,4)){ctx.fillText(line,540,y+30);y+=43}
+  y+=85;ctx.fillStyle='#f4c86b';ctx.font='bold 36px Arial, sans-serif';ctx.fillText('MIS FRAGANCIAS RECOMENDADAS',540,y);y+=70;
+  const names=recommended.length?recommended.map(x=>x.name):['Consultá con tu asesora SONIVEL'];
+  ctx.fillStyle='#ffffff';ctx.font='bold 36px Arial, sans-serif';
+  for(let i=0;i<names.length;i++){
+   const chunks=lines((i+1)+'. '+names[i],850,'bold 36px Arial, sans-serif');
+   for(const line of chunks){ctx.fillText(line,540,y);y+=51}y+=22;
+  }
+  ctx.fillStyle='#d9bdd1';ctx.font='26px Arial, sans-serif';
+  ctx.fillText('Recomendaciones orientativas · Consultá disponibilidad y precios',540,1180);
+  ctx.fillStyle='#f4c86b';ctx.font='bold 30px Arial, sans-serif';ctx.fillText('SONIVEL · Tu esencia, tu estilo',540,1240);
+  const blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/png'));
+  if(!blob)throw new Error('No se pudo generar la imagen');
+  const url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download='SONIVEL_Mi_Perfil_Olfativo.png';document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),60000);
+ }catch(err){console.error('Error al guardar tarjeta:',err);alert('No pudimos guardar la imagen en este dispositivo. Podés usar «Compartir mi perfil olfativo».')}
+}
+function contact(){
+ const a=advisor();if(!a.phone){alert('Primero creá y abrí tu enlace de asesora para habilitar WhatsApp.');return}
+ const perfumes=recommended.length?recommended.map(x=>x.name).join(', '):'Todavía no tengo fragancias recomendadas';
+ const message=`¡Hola, ${a.name}! Hice el test SONIVEL y descubrí mi aroma ideal.\n\nMi perfil olfativo es: ${profiles[winner][0]}.\nLas fragancias que me recomendaron son: ${perfumes}.\n\nMe gustaría consultar por su disponibilidad y precios.`;
+ window.open('https://wa.me/'+a.phone+'?text='+encodeURIComponent(message),'_blank','noopener');
+}goHome();
+loadPublished();
+</script></body></html>

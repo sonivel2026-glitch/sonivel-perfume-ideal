@@ -1,0 +1,5 @@
+SONIVEL Perfume Ideal — V6.19, candidata para GitHub Pages.
+Se quitaron avisos de prueba y se acortaron tarjetas (sin bloque Momentos perfectos ni aviso repetido).
+Algoritmo de recomendaciones, Supabase y WhatsApp sin cambios.
+PENDIENTE: probar en navegador con catálogo real, resultados y enlaces de asesoras antes de compartir públicamente.
+No se modificó Supabase, Netlify ni el panel de administradora.
